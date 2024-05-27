@@ -36,7 +36,7 @@ export default function LogIn(){
             <LogInContext.Provider value={{user, getUser}}>
                 <div className="sn-txt">
                     <hr /> 
-                    <h2>LOG IN</h2>
+                    <h2>LOGIN</h2>
                     <hr />
                 </div>
 

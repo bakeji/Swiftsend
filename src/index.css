@@ -410,11 +410,14 @@ margin: 20px auto;
 }
 hr{
   flex-grow: 1;
+  border: 1px solid black;
 }
 .sn-txt h2{
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .log-in{
   width: 30%;

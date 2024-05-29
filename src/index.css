@@ -440,10 +440,13 @@ hr{
   flex-direction: column;
   gap: 12px;
 }
-.cnt-btn, .fgt-pwd{
+.fgt-pwd{
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
 }
+.cnt-btn, .fgt-pw{
+  width: 90%;
+} 
 .fgt-pw button{
   width: 100%;
   height: 46px;

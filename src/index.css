@@ -18,8 +18,8 @@ body{
   width: 90%;
   margin: auto;
   display: flex;
-  align-items: normal;
-  gap: 60%;
+  align-items: center;
+  gap: 70%;
 }
 .logo{
   margin-top: 30px;
@@ -351,7 +351,7 @@ margin: 20px auto;
   height: 100%;
   padding-bottom: 50px;
   box-sizing: border-box;
-  background: #F1F1F1;
+  background: #FFFFFF;
 }
 
 /* radio button */
@@ -471,7 +471,7 @@ hr{
   height: 100%;
   /* padding-bottom: 50px; */
   box-sizing: border-box;
-  background: #F1F1F1;
+  background: #FFFFFF;
   display: flex;
 }
 .fgt-pwd{

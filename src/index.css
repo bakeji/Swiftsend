@@ -353,7 +353,7 @@ margin: 20px auto;
   box-sizing: border-box;
   background: #FFFFFF;
 }
-.cnt-btn button{
+.cnt-btn button, .csu-div button{
   display: flex;
   align-items: center;
   justify-content: center;

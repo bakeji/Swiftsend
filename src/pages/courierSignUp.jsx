@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import Form from "../component/sign up component/form";
 import SignUpHeader from "../component/sign up component/head";
 import { CourierContext } from "../context/courierContext";
@@ -12,7 +12,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 export default function CourierSignUp(){
 
     const {details, IsEmptyOrFalse} = useContext(CourierContext)
-
+    const [loading, setLoading] =useState(false)
     let auth = getAuth(app)
     const db= getFirestore(app)
 
@@ -25,6 +25,7 @@ export default function CourierSignUp(){
     // handle form submission
    function Submit(event){
     event.preventDefault()
+    setLoading(true)
     createUserWithEmailAndPassword(auth, details.email, details.password)
     .then((response)=>{
         const userData = {
@@ -45,6 +46,7 @@ export default function CourierSignUp(){
     })
     .catch((error)=>{
         alert(error)
+        setLoading(false)
     })
     console.log(details)
    }
@@ -58,7 +60,7 @@ export default function CourierSignUp(){
                 <h1>Become a Courier</h1>
                 <Form />
                 <div className="csu-div">
-                <button disabled={IsEmptyOrFalse}  className={`csu-btn ${IsEmptyOrFalse? 'dis': "ena"}`}>Sign Up as Courier</button>
+                <button disabled={IsEmptyOrFalse}  className={`csu-btn ${IsEmptyOrFalse? 'dis': "ena"}`}>{ loading? <div className="spinner"></div>:"Sign Up as Courier"}</button>
                 </div>
                 <p className="lg-in">Already have an account 
                 <Link style={{textDecoration: "none"}} to="/login"><span>Login <img src="/images/SignIn.png" alt="" /></span></Link></p>

@@ -12,13 +12,14 @@ export default function CustomerSignUp(){
     const navigate = useNavigate()
 
     const {details, IsEmptyOrFalse} = useContext(CourierContext)
-    //const {loading, setLoading} = useState(false)
+    const {loading, setLoading} = useState(false)
 
     let auth = getAuth(app)
     const db= getFirestore(app)
      // handle form submission
      function Submit(event){
         event.preventDefault()
+        setLoading(true)
         createUserWithEmailAndPassword(auth,details.email, details.password)
         .then((response)=>{
             const userData = {
@@ -39,8 +40,12 @@ export default function CustomerSignUp(){
            
         })
         .catch((error)=>{
-            alert(error)
-        })
+        console.log(error)
+        alert("user already exist")
+        setLoading(false)
+        }
+    )
+        
        }
     return(
         <div className="csu">
@@ -49,7 +54,7 @@ export default function CustomerSignUp(){
                 <h1>Become a Customer</h1>
                 <Form />
                 <div className="csu-div">
-                <button disabled={IsEmptyOrFalse}  className={`csu-btn ${IsEmptyOrFalse? 'dis': "ena"}`}>Sign Up as Customer</button>
+                <button disabled={IsEmptyOrFalse}  className={`csu-btn ${IsEmptyOrFalse? 'dis': "ena"}`}>{loading? <div className="spinner"></div> :"Sign Up as Customer"} </button>
                 </div>
                 <p className="lg-in">Already have an account
                  <Link style={{textDecoration: "none"}} to="/login"><span> Login <img src="images/SignIn.png" alt="" /></span>

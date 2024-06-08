@@ -12,6 +12,8 @@ export default function CustomerSignUp(){
     const navigate = useNavigate()
 
     const {details, IsEmptyOrFalse} = useContext(CourierContext)
+    //const {loading, setLoading} = useState(false)
+
     let auth = getAuth(app)
     const db= getFirestore(app)
      // handle form submission

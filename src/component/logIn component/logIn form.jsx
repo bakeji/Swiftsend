@@ -5,7 +5,7 @@ import { LogInContext } from "../../context/loginContext";
 
 export default function LogInForm(){
     const [showPassword, setShowPassword] = useState(false)
-    const {user, getUser} = useContext(LogInContext)
+    const {user, getUser, loading} = useContext(LogInContext)
 // hide and show password
     function togglePassword(event){
         setShowPassword(prev => !prev)
@@ -50,7 +50,8 @@ export default function LogInForm(){
             <p className="wr">Incorrect email or password. Please try again with the correct information</p>
 
             <div className="cnt-btn">
-                <button className={`cont ${IsEmpty? "dis": "ena"} `} disabled={IsEmpty}>Continue</button>
+                <button className={`cont ${IsEmpty? "dis": "ena"} `} disabled={IsEmpty}>
+                    {loading? <div className="spinner"></div>: "continue"}</button>
             </div>
             <div className="fgt-pw">
                 <Link to="/resetPassword">

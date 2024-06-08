@@ -14,6 +14,7 @@ export default function LogIn(){
         password: "",
         typeOfUser: ""
     })
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
    
     // handle form input
@@ -34,6 +35,7 @@ export default function LogIn(){
     // handle form submission
    async function submitForm(event){
         event.preventDefault()
+        setLoading(true)
         try {
             const userCredential = await signInWithEmailAndPassword(auth, user.email, user.password);
             const userId = userCredential.user.uid;
@@ -52,6 +54,8 @@ export default function LogIn(){
             
         } catch (error) {
             console.log(error.message)
+        } finally {
+            setLoading(false)
         }
      
     }
@@ -63,7 +67,7 @@ export default function LogIn(){
 
     return(
         <div className="sign-in">
-            <LogInContext.Provider value={{user, getUser}}>
+            <LogInContext.Provider value={{loading, user, getUser}}>
                 <div className="sn-txt">
                     <hr /> 
                     <h2>LOGIN</h2>

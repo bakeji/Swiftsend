@@ -9,10 +9,10 @@ export default function Welcome(){
                     <h1>Welcome to SWIFTSEND!</h1>
                     <div className="img">
                         <img src="images/Illustration.png" alt="illustration" />
-                        <div className="wlc-btn">
+                    </div>
+                    <div className="wlc-btn">
                            <Link to=""><button className="prcd">Proceed to verify Identity</button></Link>
                         </div>
-                    </div>
                 </div>
         </div>
     )

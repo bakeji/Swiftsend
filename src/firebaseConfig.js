@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-const apiKey= import.meta.env.VITE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: apiKey,
+  apiKey:import.meta.env.VITE_API_KEY ,
   authDomain: "swiftsend-2efeb.firebaseapp.com",
   projectId: "swiftsend-2efeb",
   storageBucket: "swiftsend-2efeb.appspot.com",

@@ -42,7 +42,7 @@ export default function LogIn(){
 
             if (userData.role === user.typeOfUser) {
                 console.log("User signed in successfully");
-                navigate("/welcome")
+                navigate("/terms")
 
             } else {
                 // User role does not match the specified role

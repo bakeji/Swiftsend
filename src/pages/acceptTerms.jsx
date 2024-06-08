@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SignUpHeader from "../component/sign up component/head";
+import { Link } from "react-router-dom";
 
 export default function AcceptTerms(){
 
@@ -34,7 +35,7 @@ console.log(agreement)
 
 
                 <div className="terms-cont">
-                    <button disabled={agreement===false} className={agreement? "enab": "disab"} >Continue</button>
+            <Link to="/welcome"><button disabled={agreement===false} className={agreement? "enab": "disab"} >Continue</button></Link>        
                 </div>
              </div>
         </div>

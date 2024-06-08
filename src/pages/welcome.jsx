@@ -11,7 +11,7 @@ export default function Welcome(){
                         <img src="images/Illustration.png" alt="illustration" />
                     </div>
                     <div className="wlc-btn">
-                           <Link to=""><button className="prcd">Proceed to verify Identity</button></Link>
+                           <Link to="/verification"><button className="prcd">Proceed to verify Identity</button></Link>
                         </div>
                 </div>
         </div>

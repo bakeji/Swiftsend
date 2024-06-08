@@ -14,7 +14,8 @@ export default function LogIn(){
         password: "",
         typeOfUser: ""
     })
-     const navigate = useNavigate
+    const navigate = useNavigate()
+   
     // handle form input
 
     function getUser(event){
@@ -43,13 +44,14 @@ export default function LogIn(){
             if (userData.role === user.typeOfUser) {
                 console.log("User signed in successfully");
                 navigate("/terms")
-
-            } else {
-                // User role does not match the specified role
-                console.log("Invalid role for this user");
+            } 
+            else{
+                alert("wrong email or password")
             }
+
+            
         } catch (error) {
-            console.log(error.message);
+            console.log(error.message)
         }
      
     }

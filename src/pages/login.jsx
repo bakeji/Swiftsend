@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import User from "../component/logIn component/checkUser";
 import LogInForm from "../component/logIn component/logIn form";
 import { LogInContext } from "../context/loginContext";
+import {getDoc, doc, getFirestore } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from "../firebaseConfig";
+import { useNavigate } from "react-router-dom";
 export default function LogIn(){
 
 
@@ -10,7 +14,7 @@ export default function LogIn(){
         password: "",
         typeOfUser: ""
     })
-
+     const navigate = useNavigate
     // handle form input
 
     function getUser(event){
@@ -22,11 +26,35 @@ export default function LogIn(){
             }
         })
     }
+    
+    const auth = getAuth();
+    const db= getFirestore(app)
+
     // handle form submission
-    function submitForm(event){
+   async function submitForm(event){
         event.preventDefault()
-        console.log(user)
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, user.email, user.password);
+            const userId = userCredential.user.uid;
+
+            const userDoc = await getDoc(doc(db,  user.typeOfUser, userId));
+            const userData = userDoc.data();
+
+            if (userData.role === user.typeOfUser) {
+                console.log("User signed in successfully");
+                navigate("/welcome")
+
+            } else {
+                // User role does not match the specified role
+                console.log("Invalid role for this user");
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+     
     }
+
+    
     console.log(user.typeOfUser)
 
 

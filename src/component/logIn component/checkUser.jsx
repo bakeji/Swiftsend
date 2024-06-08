@@ -10,8 +10,8 @@ export default function User(){
                         <input type="radio"
                          id="customer" 
                          name="typeOfUser"
-                          value="customer"
-                          checked={user.typeOfUser === "customer"}
+                          value="Customer"
+                          checked={user.typeOfUser === "Customer"}
                             onChange={getUser}
                          required/>
                             <label className="btn btn-default" htmlFor="customer">Log in as a Customer</label>
@@ -22,9 +22,9 @@ export default function User(){
                          type="radio" 
                          id="courier" 
                          name="typeOfUser"
-                         checked={user.typeOfUser === "courier"}
+                         checked={user.typeOfUser === "Courier"}
                          onChange={getUser} 
-                         value="courier"
+                         value="Courier"
                         required/>
                             <label className="btn btn-default" htmlFor="courierr">Log in as a Courier</label>
                     </div>

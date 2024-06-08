@@ -10,21 +10,23 @@ import { CourierContext } from "./context/courierContext";
 import AcceptTerms from "./pages/acceptTerms";
 import Welcome from "./pages/welcome";
 import Verification from "./pages/verification";
+import User from "./component/logIn component/checkUser";
 
 export default function App(){
 
-const [courierDetails, setCourierDetails] = useState({
+const [details, setDetails] = useState({
   email : "",
   password: "",
   phone: "",
   city: "",
-  terms:false
+  terms:false,
+  role: "courier"
 })
 
   // handle form input
-  function getCourierDetails(event){
+  function getDetails(event){
     const {name, value, type, checked} = event.target
-    setCourierDetails(prev => {
+    setDetails(prev => {
         return {
             ...prev,
             [name]: type === "checkbox"? checked: value
@@ -34,7 +36,7 @@ const [courierDetails, setCourierDetails] = useState({
 
 // check if the input fields are empty or the checkmark is false
 const IsEmptyOrFalse=
-Object.values(courierDetails).some(
+Object.values(details).some(
     (value) => !value)
 
 
@@ -43,7 +45,7 @@ Object.values(courierDetails).some(
 
   return(
     <div className="app">
-      <CourierContext.Provider value={{courierDetails,IsEmptyOrFalse, getCourierDetails}}>
+      <CourierContext.Provider value={{setDetails,details, IsEmptyOrFalse, getDetails}}>
      <BrowserRouter>
      <Routes>
       <Route  path="/"  element={<LandingPage/>}/>

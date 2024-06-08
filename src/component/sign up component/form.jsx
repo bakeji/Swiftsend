@@ -3,7 +3,7 @@ import { CourierContext } from "../../context/courierContext";
 
 export default function Form(){
     const [showPassword, setShowPassword] = useState(false)
-    const {courierDetails, getCourierDetails} = useContext(CourierContext)
+    const {details, getDetails} = useContext(CourierContext)
 
     // hide and show password
     function togglePassword(event){
@@ -21,8 +21,8 @@ export default function Form(){
              id="email"
              type="email"
              name="email"
-             value={courierDetails.email}
-             onChange={getCourierDetails} 
+             value={details.email}
+             onChange={getDetails} 
              required
              />
         </div>
@@ -33,8 +33,9 @@ export default function Form(){
                 <input id="pwd" 
                 type={showPassword? "text": "password"} 
                 name="password"
-                value={courierDetails.password}
-                onChange={getCourierDetails}
+                value={details.password}
+                onChange={getDetails}
+                pattpattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more character"
                 required
                 /> 
                 <button
@@ -51,8 +52,8 @@ export default function Form(){
             <p>+234</p>
             <input id="phone" type="tel"
             name="phone"
-            value={courierDetails.phone}
-            onChange={getCourierDetails} 
+            value={details.phone}
+            onChange={getDetails} 
             required
             />
             </div>
@@ -63,8 +64,8 @@ export default function Form(){
             <input id="city"
              type="text"
              name ="city" 
-             value={courierDetails.city}
-             onChange={getCourierDetails}
+             value={details.city}
+             onChange={getDetails}
              required/>
         </div>
 
@@ -73,8 +74,8 @@ export default function Form(){
             type="checkbox" 
             id="terms"
             value="terms"
-            checked={courierDetails.terms}
-            onChange={getCourierDetails}
+            checked={details.terms}
+            onChange={getDetails}
             required />
             <label htmlFor="terms">By signing up, you agree to our <span>Terms of Service</span>and <span>Privacy policy</span>, commit to comply with obligations under the Nigerian Govt and local legislation and provide only legal services and content on the Swift Send Platform.</label>
         </div>

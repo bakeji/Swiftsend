@@ -32,7 +32,7 @@ export default function(props){
 
                 <div className="bc-cus">
                     <div>
-                    <img src="/images/trk.png"alt="truck" />
+                    <img src="/images/cust.png"alt="truck" />
                     </div>
                     <div className="bc-txt">
                         <p>Become a customer</p>

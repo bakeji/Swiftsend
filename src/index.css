@@ -549,6 +549,66 @@ hr{
   color: #E9B546;
   cursor: pointer;
 }
+/* change Password */
+.pwd-chng{
+  height: 100%;
+  box-sizing: border-box;
+  width: 30%;
+  margin: 90px auto;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+.pwd-chng h2{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  }
+  .pwd-chng p, .chng-txt li{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .chng-txt{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .chng-txt li{
+    margin-left: 35px;
+    margin-bottom: 12px;
+  }
+
+  .pwd-chng form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 40px;
+  }
+  .pwd-chng input, .rtn{
+    height: 56px;
+    border-radius: 12px;
+    border: 1px solid #E9B546;
+    padding: 0 10px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .pwd-chng form button{
+    margin-top: 20px;
+  }
+  .rtn{
+    width: 100%;
+    background: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #E9B546;
+  }
+
 /* success page */
 .sucesspg{
   height: 100vh;
@@ -786,6 +846,7 @@ gap: 40%;
   height: 100%;
   padding-bottom: 80px;
 }
+
 
 
 

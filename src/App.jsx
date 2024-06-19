@@ -11,6 +11,8 @@ import AcceptTerms from "./pages/acceptTerms";
 import Welcome from "./pages/welcome";
 import Verification from "./pages/verification";
 import User from "./component/logIn component/checkUser";
+import ChangePassword from "./pages/changePassword";
+import Upload from "./pages/upload";
 
 export default function App(){
 
@@ -53,10 +55,12 @@ Object.values(details).some(
       <Route path ="/customer" element={<CustomerSignUp/>} />
       <Route path="/login" element={<LogIn />} />
       <Route path ="/resetPassword" element={<ResetPassword />} />
+      <Route path ="/ChangePassword" element={<ChangePassword />} />
       <Route path="/success" element={<SuccessPage />} />
       <Route path="/terms" element={<AcceptTerms />} />
       <Route path="/welcome" element ={<Welcome />} />
       <Route path="/verification" element ={<Verification/>} />
+      <Route path="/upload" element ={<Upload />} />
      </Routes>
      </BrowserRouter>
      </CourierContext.Provider>   

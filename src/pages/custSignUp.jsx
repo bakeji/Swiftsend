@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Form from "../component/sign up component/form";
 import SignUpHeader from "../component/sign up component/head";
 import { Link, useNavigate } from "react-router-dom";

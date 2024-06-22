@@ -15,6 +15,30 @@ export default function Form(){
 
     return(
         <div className="form">
+
+            <div className="name">
+                <label htmlFor="firstName"> First Name</label>
+                <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                value={details.firstName}
+                onChange={getDetails}
+                required />
+            </div>
+
+            <div className="name">
+                <label htmlFor="lastName"> Last Name</label>
+                <input
+                type="text"
+                name="lastName"
+                id="lasstName"
+                value={details.lastName}
+                onChange={getDetails}
+                required />
+            </div>
+
+
         <div className="email">
             <label htmlFor="email"> Email</label>
             <input

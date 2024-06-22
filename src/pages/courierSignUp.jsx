@@ -30,10 +30,11 @@ export default function CourierSignUp(){
     .then((response)=>{
         const userData = {
             email: details.email,
-            phone: details.phone,
+            phone: "+234" + details.phone,
             city: details.city,
             terms: details.terms,
-            role: "Courier"
+            role: "Courier",
+            Name: details.firstName + "" + details.lastName
         };
 
     return setDoc(doc(db, "Courier", response.user.uid), userData);

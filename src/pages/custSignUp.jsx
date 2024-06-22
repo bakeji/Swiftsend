@@ -27,6 +27,7 @@ export default function CustomerSignUp(){
                 phone: details.phone,
                 city: details.city,
                 terms: details.terms,
+                Name: details.firstName + "" + details.lastName,
                 role: "Customer"
             };
             console.log(response.user.uid, userData)

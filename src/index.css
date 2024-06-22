@@ -4,7 +4,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
+body, .app, .lg{
  min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
@@ -226,7 +226,7 @@ body{
   gap: 12px;
   margin-top: 30px;
 }
-.password, .email, .city, .phone{
+.password, .email, .city, .phone, .name{
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -249,7 +249,7 @@ body{
   color: #000000;
 
 }
-.email input, .city input{
+.email input, .name input, .city input{
   width: 90%;
   border: 1px solid #1F1F1F4D;
 }
@@ -348,13 +348,23 @@ margin: 20px auto;
 
 /* Login form */
 .sign-in{
-  height: 100%;
-  padding-bottom: 50px;
+width: 35%;
   box-sizing: border-box;
+  padding: 15px;
+  margin:70px auto 70px auto;
   background: #FFFFFF;
+  box-shadow:  0px 12px 19px 0px rgba(0, 0, 0, 0.15);
 }
+.lgn-form .email input{
+  width: 100%;
+}
+.lgn-form .password div{
+  width: 100%;
+}
+
 .cnt-btn button, .csu-div button{
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -422,17 +432,20 @@ margin: 20px auto;
 
 
 .sn-txt{
-  width: 30%;
+  width: 85%;
   margin: 0 auto;
   margin-bottom: 30px;
  text-align: center; 
  display: flex;
-  padding-top:  70px; 
+  padding-top:  20px; 
  align-items: center;
 }
 hr{
   flex-grow: 1;
-  border: 1px solid black;
+  border: 2px solid black;
+}
+.lg{
+background: #F5F5F5;
 }
 .sn-txt h2{
   font-family: "Nunito Sans", sans-serif;
@@ -442,7 +455,6 @@ hr{
   padding-right: 10px;
 }
 .log-in{
-  width: 30%;
   background: #ffffff;
   margin: auto;
   display: flex;
@@ -455,19 +467,20 @@ hr{
 .user{
   display: flex;
   align-items: center;
+  gap: 10px;
   justify-content: center;
 }
 .lgn-form{
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
 }
 .fgt-pwd{
   width: 80%;
   margin: 0 auto;
 }
 .cnt-btn, .fgt-pw{
-  width: 90%;
+  width: 100%;
 } 
 .fgt-pw button{
   width: 100%;
@@ -553,7 +566,10 @@ hr{
 .pwd-chng{
   height: 100%;
   box-sizing: border-box;
-  width: 30%;
+  width: 35%;
+  padding: 38px;
+  border-radius: 12px;
+  box-shadow:  0px 12px 19px 0px rgba(0, 0, 0, 0.15);
   margin: 90px auto;
   background: #FFFFFF;
   display: flex;
@@ -565,6 +581,11 @@ hr{
   font-size: 24px;
   text-align: center;
   margin-bottom: 40px;
+  }
+  .pwd-chng h3{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
   }
   .pwd-chng p, .chng-txt li{
     font-family: "Nunito Sans", sans-serif;
@@ -578,7 +599,7 @@ hr{
   }
 
   .chng-txt li{
-    margin-left: 35px;
+    margin-left: 25px;
     margin-bottom: 12px;
   }
 
@@ -612,18 +633,21 @@ hr{
 /* success page */
 .sucesspg{
   height: 100vh;
-  /* padding-bottom: 50px; */
   box-sizing: border-box;
   background: #F1F1F1;
   display: flex;
 }
 .scs{
-  width: 25%;
+  width: 30%;
+  box-shadow:  0px 12px 19px 0px rgba(0, 0, 0, 0.15);
   margin: auto;
+  border-radius: 12px;
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 180px;
+  gap: 80px;
+  padding: 30px;
 }
 .scs-txt{
   display: flex;
@@ -846,13 +870,172 @@ gap: 40%;
   height: 100%;
   padding-bottom: 80px;
 }
+/* upload card */
+.upload-txt{
+  width: 32%;
+  padding: 60px;
+  margin: 70px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  border-radius:12px ;
+  box-shadow:  0px 12px 19px 0px rgba(0, 0, 0, 0.15);
+  gap: 18px;
+  align-items: center;
+}
+.upload-txt1{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.upload-txt1 h2{
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.up-txt1{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+.up-txt1 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+.up-txt1 h3{
+  font-family: 'nunito sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+.steps{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  margin-bottom: 30px;
+}
+.steps span{
+  color: #3884FD;
+}
+.cnt{
+  width: 80%;
+  cursor:pointer;
+  height: 46px;
+  margin-left: 40px;
+  background-color: #E9B546;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+.upl-txt1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+ 
+}
+.upl-txt1 h3{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+.upl-txt1 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
 
-
-
-
-
-
-
-
-
+}
+/* .upload-txt form{
+width: 80%;
+display: flex;
+align-items: center;
+gap: 20px;
+flex-direction: column;
+} */
+.upload-frm{
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  height: 46px;
+  border: 1px solid #AAAAAA;
+  width: 100%;
+  border-radius: 4px;
+  line-height: 40px;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+.upload-frm label{
+  width: 100%;
+  cursor: pointer;
+}
+.upload-frm img{
+  margin-left: 72px;
+  vertical-align: middle;
+}
+.cnt2{
+  width: 30%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.cnt2 .cnt, .cntt{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dis2{
+  cursor: not-allowed;
+}
+.upload-txt input{
+  display: none;
+}
+/* complete verification */
+.veri-ld{
+  width: 35%;
+  margin: 70px auto 30px auto;
+  box-shadow:  0px 12px 19px 0px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+.lding{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #E9B54680;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spin{
+  width:25px;
+  height: 25px;
+  border-top: 4px solid #3884FD;
+}
+.veri-ld h3{
+  font-family:  "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+.veri-ld p{
+  font-family:  "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+.veri-ld span{
+  color: #3884FD;
+}
 

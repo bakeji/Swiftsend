@@ -8,7 +8,7 @@ export default function SuccessPage(){
                     <img src="images/check.png" alt="seal check" />
                     <h1>Success!</h1>
                     <p>Your password has been updated and is secure.</p>
-                    <p>You can log in again</p>
+                    <p>You can now log in again</p>
                 </div>
 
                     <div className="scs-btn">

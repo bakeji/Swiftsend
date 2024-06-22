@@ -13,6 +13,8 @@ import Verification from "./pages/verification";
 import User from "./component/logIn component/checkUser";
 import ChangePassword from "./pages/changePassword";
 import Upload from "./pages/upload";
+import FrontOfCard from "./pages/upload";
+import BackOfCard from "./pages/compVerification";
 
 export default function App(){
 
@@ -22,7 +24,9 @@ const [details, setDetails] = useState({
   phone: "",
   city: "",
   terms:false,
-  role: "courier"
+  role: "courier",
+  firstName: "",
+  lastName: ""
 })
 
   // handle form input
@@ -61,6 +65,7 @@ Object.values(details).some(
       <Route path="/welcome" element ={<Welcome />} />
       <Route path="/verification" element ={<Verification/>} />
       <Route path="/upload" element ={<Upload />} />
+      <Route path="/completeVerification" element ={<BackOfCard />} />
      </Routes>
      </BrowserRouter>
      </CourierContext.Provider>   

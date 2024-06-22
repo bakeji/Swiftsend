@@ -51,7 +51,7 @@ export default function ChangePassword(){
         <div className="pwd-chng">
             <h2>Change Your Password</h2>
             <div className="chng-txt">
-                <p>To create a secure password</p>
+                <h3>To create a secure password</h3>
                 <ul>
                     <li>Use at least 8 characters</li>
                     <li>Use a mix of letters, numbers and special characters</li>

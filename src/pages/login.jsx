@@ -6,6 +6,7 @@ import {getDoc, doc, getFirestore } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import SignUpHeader from "../component/sign up component/head";
 export default function LogIn(){
 
 
@@ -66,19 +67,21 @@ export default function LogIn(){
 
 
     return(
-        <div className="sign-in">
-            <LogInContext.Provider value={{loading, user, getUser}}>
-                <div className="sn-txt">
-                    <hr /> 
-                    <h2>LOGIN</h2>
-                    <hr />
-                </div>
+        <div className="lg">
+            <div className="sign-in">
+                <LogInContext.Provider value={{loading, user, getUser}}>
+                    <div className="sn-txt">
+                        <hr /> 
+                        <h2>LOGIN</h2>
+                        <hr />
+                    </div>
 
-            <form onSubmit={submitForm} className="log-in">
-                <User />
-                <LogInForm />
-            </form>
-            </LogInContext.Provider>
+                <form onSubmit={submitForm} className="log-in">
+                    <User />
+                    <LogInForm />
+                </form>
+                </LogInContext.Provider>
+            </div>
         </div>
 
     )
